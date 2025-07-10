@@ -97,7 +97,8 @@ pipeline {
                 }
             }
             environment {
-                CI_ENVIRONMENT_URL = "${env.STAGING_URL}"
+                // CI_ENVIRONMENT_URL = "${env.STAGING_URL}"
+                CI_ENVIRONMENT_URL = 'STAGING_URL_TO_SET'
             }
 
             steps {
@@ -137,7 +138,7 @@ pipeline {
                     node_modules/.bin/netlify deploy --dir=build --prod
                 '''
             }
-        } /*
+        } */
 
         stage('Deploy prod') {
             agent {
